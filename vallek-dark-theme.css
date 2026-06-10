@@ -1,0 +1,70 @@
+/* Page */
+body {
+	--prime-color: initial;
+	--back-color: #ffffff;
+	--dark-color: #002B36;
+	color: var(--prime-color);
+	background-color: var(--back-color);
+}
+
+/* Dark Theme */
+body.dark {
+	--prime-color: #c3d5d9;
+	--back-color: #002B36;
+}
+
+/* Theme Switch */
+.themes__button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: fit-content;
+	height: 2em;
+	padding: 0 2em;
+	background-color: var(--dark-color);
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.themes__button::after {
+	--circle-size: 1.25em;
+	--cricle-padding: 0.25em;
+	font-size: 1.2em;
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: var(--circle-size);
+	height: var(--circle-size);
+	top: 50%;
+	left: var(--cricle-padding);
+	border-radius: 50%;
+	background-color: var(--back-color);
+	transform: translate(0, -50%);
+	transition: left 300ms ease-in-out;
+}
+
+.dark .themes__button {
+	background-color: var(--prime-color);
+}
+
+.dark .themes__button::after {
+	left: calc(100% - var(--circle-size) - var(--cricle-padding));
+}
+
+.themes__label {
+	padding: 0 0.3em;
+	width: auto;
+	color: var(--back-color);
+}
+
+.dark .themes__label {
+	right: 2em;
+}
+
+/* Other styles. To make dark theme work with other elements just add variables as color and background-color values. */
+a {
+	color: var(--prime-color);
+}

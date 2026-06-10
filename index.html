@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vallek's Dark Theme Demo</title>
+	<style>
+		body {
+			font-size: 1.2em;
+		}
+		header,
+		main,
+		footer {
+			margin: 0 auto;
+			max-width: 80ch;
+		}
+		fieldset {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+		}
+		blockquote {
+			padding: 3em;
+			box-shadow: 0 0 8px 0 rgb(128, 128, 128);
+		}
+	</style>
+	<link rel="stylesheet" href="vallek-dark-theme.css">
+	<script defer src="vallek-dark-theme.js"></script>
+</head>
+<body>
+	<script>
+		const thisPage = document.querySelector('.page');
+		// Check if user set dark theme before
+		if (localStorage.getItem('aisucks-theme') === 'dark') {
+			thisPage.classList.add('dark');
+		}
+		// Check if user prefers dark theme
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			thisPage.classList.add('dark');
+		}
+	</script>
+	<header>
+		<h1>Vallek's Dark Theme Demo</h1>
+		<span>This is universal dark theme for any website/web app. It uses only vanilla CSS and JS and NO libraries or dependencies.</span>
+		<section class="themes toggle header__themes">
+			<h2 class="themes__text visually-hidden">Dark/Light Theme switch</h2>
+			<button class="toggle__button themes__button toggle__theme" aria-label="Dark/Light Theme switch" title="Dark/Light Theme switch">
+				<span class="settings__label themes__label">Theme</span>
+			</button>
+		</section>
+	</header>
+	<main>
+		<h2>H2 Heading</h2>
+		<h3>H3 Heading</h3>
+		<h4>H4 Heading</h4>
+		<p>Paragraph of text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ex soluta accusantium voluptatum laudantium magnam! Cupiditate adipisci animi odio maiores vitae, tempore et pariatur reiciendis voluptatum modi eius nulla iure. Here's <a href="">a link</a> inside a paragraph. And a <q>quote</q>.</p>
+		<a href="">Hyperlink</a>
+		<blockquote>Blockquote with text</blockquote>
+		<section>
+				<h2>Interactive Elements</h2>
+
+				<details>
+						<summary>Click to expand</summary>
+						Hidden content appears here.
+				</details>
+
+				<progress value="70" max="100">70%</progress>
+
+				<br><br>
+
+				<meter value="0.75">75%</meter>
+		</section>
+		<form action="" method="get">
+			<fieldset>
+					<legend>Legend info</legend>
+					<label for="name">Name:</label>
+					<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Enter your name">
+					<label for="email">Email:</label>
+					<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Enter your email">
+					<label for="password">Password:</label>
+					<input
+							type="password"
+							id="password"
+							name="password">
+					<label for="country">Language:</label>
+					<select id="country" name="country">
+						<option>EN</option>
+						<option>RU</option>
+					</select>
+					<label for="message">Message:</label>
+					<textarea
+							id="message"
+							name="message"
+							rows="4"
+							cols="40">Default text</textarea>
+					<label>
+							<input type="checkbox" name="subscribe">
+							Subscribe to newsletter
+					</label>
+					<label>
+							<input type="radio" name="plan" value="basic">
+							Basic Plan
+					</label>
+					<label>
+							<input type="radio" name="plan" value="premium">
+							Premium Plan
+					</label>
+					<br><br>
+					<input type="file" name="file">
+					<button type="submit">Submit</button>
+					<button type="reset">Reset</button>
+			</fieldset>
+		</form>
+	</main>
+	<footer>
+		<address>Address element with text</address>
+		<p>&copy; 2026 Vallek</p>
+	</footer>
+</body>
+</html>
