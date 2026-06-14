@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const toggleSwitch = document.querySelector('.toggle__theme');
+const toggleSwitch = document.querySelector('.themes__button');
 
 // Switch theme function
 function switchTheme(state) {

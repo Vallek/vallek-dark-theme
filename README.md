@@ -20,10 +20,10 @@ This is universal dark theme for any website/web app. It uses only vanilla CSS a
 2. Put Theme Switcher component where you want it. 
 
 ```html
-<section class="themes toggle header__themes">
-	<h2 class="themes__text visually-hidden">Dark/Light Theme switch</h2>
-	<button class="toggle__button themes__button toggle__theme" aria-label="Dark/Light Theme switch" title="Dark/Light Theme switch">
-		<span class="settings__label themes__label">Theme</span>
+<section class="themes">
+	<h2 class="themes__heading visually-hidden">Dark/Light Theme switch</h2>
+	<button class="themes__button" aria-label="Dark/Light Theme switch" title="Dark/Light Theme switch">
+		<span class="themes__label">Theme</span>
 	</button>
 </section>
 ```
