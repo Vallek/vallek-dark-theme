@@ -21,7 +21,6 @@ This is universal dark theme for any website/web app. It uses only vanilla CSS a
 
 ```html
 <section class="themes">
-	<h2 class="themes__heading visually-hidden">Dark/Light Theme switch</h2>
 	<button class="themes__button" aria-label="Dark/Light Theme switch" title="Dark/Light Theme switch">
 		<span class="themes__label">Theme</span>
 	</button>
